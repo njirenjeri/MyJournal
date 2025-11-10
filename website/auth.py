@@ -24,7 +24,7 @@ def login():
         else: 
             flash("User does not exist", category='error')
 
-    return render_template("login.html")
+    return render_template("login.html", user= current_user)
 
 
 
@@ -66,4 +66,4 @@ def signup():
             return redirect(url_for('auth.login'))
 
 
-    return render_template("sign_up.html")
+    return render_template("sign_up.html", user=current_user)
